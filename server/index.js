@@ -15,11 +15,62 @@ const db = mysql.createPool({
 });
 
 app.get("/api/get", (req, res) => {
+  const json=[
+  {
+    "id": 1,
+    "name": "Alex",
+    "email": "alex@samplemail.com",
+    "contact": "99876543210"
+  },
+  {
+    "id": 2,
+    "name": "Raj Thosani",
+    "email": "raj.thosani@samplemail.com",
+    "contact": "9988776651"
+  },
+  {
+    "id": 3,
+    "name": "amit singh",
+    "email": "amit.singh@samplemail.com",
+    "contact": "9876598765"
+  },
+  {
+    "id": 4,
+    "name": "Vicky Sharma",
+    "email": "vicky.sharma@samplemail.com",
+    "contact": "9876556789"
+  },
+  {
+    "id": 5,
+    "name": "John Doe",
+    "email": "johndoe12@samplemail.com",
+    "contact": "99876543210"
+  },
+  {
+    "id": 6,
+    "name": "Vishal Dasvate",
+    "email": "vishal.dasvate@gmail.com",
+    "contact": "9876556789"
+  },
+  {
+    "id": 7,
+    "name": "Tushar Sonawane",
+    "email": "tushar.sonawane@gmail.com",
+    "contact": "9876556789"
+  },
+  {
+    "id": 8,
+    "name": "Anay Maurya",
+    "email": "anay.maurya@gmail.com",
+    "contact": "7897897890"
+  }
+]
   const sqlGet = "SELECT * FROM contact_db";
   console.log("aaa", sqlGet);
-  db.query(sqlGet, (error, results) => {
-    res.send(results);
-  });
+  // db.query(sqlGet, (error, results) => {
+  //   res.send(results);
+  // });
+  res.send(json)
 });
 
 app.post("/api/post", (req, res) => {
